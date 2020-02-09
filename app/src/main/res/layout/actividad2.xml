@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Actividad2.Actividad2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+
+        <TabHost android:id="@android:id/tabhost"
+            android:layout_width="match_parent"
+            android:textColor="#fff"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@android:id/tabcontent" >
+
+                    <LinearLayout
+                        android:id="@+id/tab1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtIsbn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Numero ISBN Libro:"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editTextIsbn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"></EditText>
+
+                        <TextView
+                            android:id="@+id/txtNombreLibro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre del libro:"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editTextNombreLibro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"></EditText>
+
+                        <Button
+                            android:id="@+id/btnGuardarLibro"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:onClick="guardarLibro"
+                            android:layout_height="wrap_content"
+                            android:text="Guardar Libro" />
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_lista_libros"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/tab2"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+
+                        <TextView
+                            android:id="@+id/txtDniUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Numero DNI Alumno:"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editTextDniUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"></EditText>
+
+                        <TextView
+                            android:id="@+id/txtNombreUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre del Alumno:"
+                            android:textAlignment="center"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editTextNombreUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"></EditText>
+
+                        <Button
+                            android:id="@+id/btnGuardarAlumno"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:onClick="guardarAlumno"
+                            android:layout_height="wrap_content"
+                            android:text="Guardar Alumno" />
+
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_lista_alumnos"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout android:id="@+id/tab3"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textSize="20dp"
+                            android:textStyle="bold|italic"
+                            android:textAlignment="center"
+                            android:text="Elige un Alumno y un Libro para realizar el prestamo"
+                            android:layout_height="wrap_content">
+
+                        </TextView>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="30dp"
+                            android:layout_height="wrap_content">
+
+                            <Spinner
+                                android:id="@+id/spinnerAlumnos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp" />
+
+                            <Spinner
+                                android:id="@+id/spinnerLibros"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp" />
+
+                        </LinearLayout>
+
+
+                        <Button
+                            android:id="@+id/btnGuardarPrestamo"
+                            android:layout_width="match_parent"
+                            android:onClick="guardarPrestamos"
+                            android:layout_height="wrap_content"
+                            android:text="Guardar Prestamo" />
+
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_lista_prestamos"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </LinearLayout>
+
+
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </TabHost>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Actividad1.Actividad1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+
+        <TabHost android:id="@android:id/tabhost"
+            android:layout_width="match_parent"
+            android:textColor="#fff"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@android:id/tabcontent" >
+
+                    <LinearLayout
+                        android:id="@+id/tab1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtNombre"
+                            android:layout_marginTop="20dp"
+                            android:layout_width="match_parent"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre Contancto:" />
+
+                        <EditText
+                            android:id="@+id/editTextNombre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"></EditText>
+
+                        <TextView
+                            android:id="@+id/txtNumero"
+                            android:layout_width="match_parent"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:layout_height="wrap_content"
+                            android:text="Numero de contacto:" />
+
+                        <EditText
+                            android:id="@+id/editTextNumero"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"></EditText>
+
+                        <Button
+                            android:id="@+id/btnGuardar"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:onClick="guardarContacto"
+                            android:layout_height="wrap_content"
+                            android:text="Guardar Contacto" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/tab2"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_lista_webs"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </LinearLayout>
+
+
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </TabHost>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
